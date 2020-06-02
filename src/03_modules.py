@@ -10,12 +10,24 @@ import sys
 
 # Print out the command line arguments in sys.argv, one per line:
 # YOUR CODE HERE
+import sys
+print('Argument:', len(sys.argv),'arguments')
+print('Argument List:', str(sys.argv))
+
+#Run- python3 03 modules.py arg1 arg2 arg3
+#Output- Argument List: ['modules.py', 'arg1', 'arg2', 'arg3']
 
 # Print out the OS platform you're using:
 # YOUR CODE HERE
+import platform
+print(platform.system())
+print(platform.release())
+print(platform.version())
 
 # Print out the version of Python you're using:
 # YOUR CODE HERE
+import platform
+print(platform.python_version())
 
 
 import os

@@ -3,7 +3,7 @@
 
 # YOUR CODE HERE
 class LatLon:
-
+    #   def __init(lat,lon):
     def __init__(self,lat,lon):
         self.lat = lat
         self.lon = lon

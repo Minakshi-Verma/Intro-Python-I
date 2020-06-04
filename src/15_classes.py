@@ -2,28 +2,77 @@
 # constructor
 
 # YOUR CODE HERE
+class LatLon:
+    #   def __init(lat,lon):
+    def __init__(self,lat,lon):
+        self.lat = lat
+        self.lon = lon
+     
+Place1 = LatLon(4,8)
+Place2 = LatLon(120,-20)
+
+# print(Place1.lat)
+# print(Place1.lon)
+# print(Place1.lat)
+# print(Place2.lon)
 
 # Make a class Waypoint that can be passed parameters `name`, `lat`, and `lon` to the
 # constructor. It should inherit from LatLon. Look up the `super` method.
 
 # YOUR CODE HERE
+class Waypoint(LatLon):
+    def __init__(self,lat,lon,name):
+        super().__init__(lat,lon)
+        self.name = name    
+Place1 = Waypoint(16,28,"agra")
+
+# print(Place1.lat)
+# print(Place1.lon)
+# print(Place1.name)
 
 # Make a class Geocache that can be passed parameters `name`, `difficulty`,
 # `size`, `lat`, and `lon` to the constructor. What should it inherit from?
 
 # YOUR CODE HERE
+class Geocache(Waypoint):
+    def __init__(self, lat, lon, name, difficulty, size):
+        super().__init__(lat, lon, name)
+        self.difficulty = difficulty
+        self.size = size
+place3 = Geocache(-220, 134, 'Austin', 'hard', 'medium')
+
+# print(place3.lat)
+# print(place3.lon)
+# print(place3.name)
+# print(place3.difficulty)
+# print(place3.size)
+
 
 # Make a new waypoint and print it out: "Catacombs", 41.70505, -121.51521
 
 # YOUR CODE HERE
+class Waypoint1(Waypoint):
+    def __init__(self, name, lat, lon):
+        super().__init__(lat,lon, name)
+
+place4 = Waypoint1("Catacombs", 41.70505, -121.51521)
+# print(place4.name, place4.lat, place4.lon)
 
 # Without changing the following line, how can you make it print into something
 # more human-readable? Hint: Look up the `object.__str__` method
-print(waypoint)
+# print(waypoint)
 
 # Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
 
 # YOUR CODE HERE
+class Geocache1(Geocache):
+    def __init__(self, lat, lon, name, difficulty, size):
+        super().__init__(lat, lon, name, difficulty, size)
+
+place5 = Geocache1(44.052137, -121.41556,"Newberry Views", "diff 1.5", "size 2")
+# print(place5.name, place5.difficulty, place5.size, place5.lat, place5.lon)
+print('{}, {}, {}, {}, {}'.format(place5.name, place5.difficulty, place5.size, place5.lat, place5.lon))
 
 # Print it--also make this print more nicely
-print(geocache)
+# print(geocache)
+
